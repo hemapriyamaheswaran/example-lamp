@@ -1,5 +1,21 @@
 # By Sharon Campbell, Ken Simon, and Joe Beda for Heptio
 # create and claim a persistent volume for our pod
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: volume
+  labels:
+    "heptio.com/example": lamp
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt"
+
+---
 # this works because we enabled cloud-provider=aws
 # so it can create a disk for itself
 # if you create a persistent volume another way
