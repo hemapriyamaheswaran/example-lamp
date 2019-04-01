@@ -59,7 +59,7 @@ spec:
       containers:
       # deploys MySQL from the default Docker Hub image
       # https://hub.docker.com/_/mysql/
-      - image: mysql
+      - image: mysql:5.7
         name: mysql
         # reserving resources from our cluster
         resources:
