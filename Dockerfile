@@ -16,8 +16,8 @@ RUN apt-get update \
 
 # take the contents of the local html/ folder, and copy to /var/www/html/ inside the container
 # this is the expected web root of the default website for this server, so put your index.php here
-RUN ["rm", "-fr", "/var/www/html"]
-COPY html/ /var/www/html/
+RUN ["rm", "-fr", "/var/www/html/index.php"]
+COPY html/index.php /var/www/html/
 
 # take the contents of the local script/ folder, and copy to /tmp/ inside the container
 # we can run one-time scripts, downloads, and other initial processes from /tmp/
