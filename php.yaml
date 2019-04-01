@@ -12,7 +12,7 @@ metadata:
 # increase this number if you need to scale PHP horizontally
 # since we have 3, the LoadBalancer will serve our app from all 3
 spec:
-  replicas: 3
+  replicas: 2
   # The number of old deployments you want to keep around
   revisionHistoryLimit: 5
   # make replicas of kubernetes objects with the label app: php-dbconnect
@@ -41,8 +41,8 @@ spec:
         #reserving resources from our cluster
         resources:
           requests:
-            cpu: 100m
-            memory: 1Gi
+            cpu: 70m
+            memory: 0.2Gi
         # env sets environment variables in the container
         # exactly like environment variables set from the command line
         env:
